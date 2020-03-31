@@ -9,7 +9,7 @@ var port = process.env.PORT || 8080;
 var app = express();
 
 // static directory
-app.use(express.static("./public"));
+app.use(express.static(__dirname + '/public'));
 
 // for parsing json or application/x-www-form-urlencoded - posting nested objects
 app.use(express.urlencoded({extended:true}));
@@ -20,7 +20,7 @@ app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 // Routes ================================
-// require("./routes/")(app);
+require("./routes/mainController.js")(app);
 
 
 

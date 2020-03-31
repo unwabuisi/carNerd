@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+        <!-- Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <!-- BootstrapJS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!-- Boostrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="aonymous">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+        <link rel="shortcut icon" href="assets/img/favicon.ico">
+
+        <title>Car Nerd</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Navigation Bar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/">
+                  <img src="/assets/img/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
+                  Car Nerd
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <div class="navbar-nav">
+                  <a class="nav-item nav-link" href="/cars">Cars For Sale</a>
+                  <a class="nav-item nav-link" href="/signup">Sign Up</a>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Login
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="/login">Buyer Log-In</a>
+                      <a class="dropdown-item" href="/login">Admin Log-In</a>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </nav>
+        </div>
+        {{{body}}}
+    </body>
+    <script type="text/javascript">
+        function toggleDropdown (e) {
+        const _d = $(e.target).closest('.dropdown'),
+        _m = $('.dropdown-menu', _d);
+        setTimeout(function(){
+        const shouldOpen = e.type !== 'click' && _d.is(':hover');
+        _m.toggleClass('show', shouldOpen);
+        _d.toggleClass('show', shouldOpen);
+        $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
+        }, e.type === 'mouseleave' ? 300 : 0);
+        }
+
+        $('body')
+        .on('mouseenter mouseleave','.dropdown',toggleDropdown)
+        .on('click', '.dropdown-menu a', toggleDropdown);
+    </script>
+</html>

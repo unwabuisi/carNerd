@@ -1,0 +1,39 @@
+body {
+    background-color: #00D1C1
+}
+
+.navbar-light {
+     background-color: #FFF6E2 !important;
+}
+
+.navbar-brand {
+    color: #00D1C1 !important;
+}
+
+.nav-link {
+    font-size: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+/*
+
+Color Theme:
+
+Foreground
+#D8D1B2
+
+Background
+#00D1C1
+
+Accent 1
+#FFF6E2
+
+Accent 2
+#B4A76C
+
+Accent 3
+#5ABC96
+
+ */

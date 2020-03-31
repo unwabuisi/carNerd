@@ -1,0 +1,2 @@
+-- run seed command for sequelize through CLI using command
+-- node_modules/.bin/sequelize db:seed:all

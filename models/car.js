@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-	var Car = sequelize.define("Car", {
+	var Car = sequelize.define("Cars", {
 		make: {
             type:DataTypes.STRING
         },

@@ -1,19 +1,45 @@
-{{#each car}}
 
-<div class="card-columns">
-    <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{this.make}}</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 
-      <div class="card-footer">
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <small class="text-muted">Last updated 4 mins ago</small>
+<div class="card-deck">
+
+    <div class="row row-cols-1 row-cols-md-3 car-listing">
+
+        {{#each car}}
+        <div class="col mb-4">
+            <div class="card">
+                <!-- <img src="https://via.placeholder.com/150" class="card-img-top" alt="..."> -->
+                <img src="https://img2.cgtrader.com/items/1908571/bc607730de/peugeot-504-taxi-3d-model-max.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.make}} - {{this.body_style}}</h5>
+                    <p class="card-text">
+                        <b>Engine Info</b>
+                        <hr>
+                        {{capitalizeFirst this.num_of_cylinders}} cylinders<br>
+                        <span class="car-info-title">MAX RPM:</span> {{this.peak_rpm}}<br>
+                        <span class="car-info-title">Horsepower (HP):</span> {{this.horsepower}}<br>
+                        <span class="car-info-title">Engine Location:</span> {{capitalizeFirst this.engine_location}}<br>
+                        <span class="car-info-title">City Miles Per Gallon (MPG):</span> {{this.city_mpg}}<br>
+                        <span class="car-info-title">Fuel Type:</span> {{capitalizeFirst this.fuel_type}}
+                        <hr>
+                        <b>Price:</b> ${{this.price}}
+                    </p>
+                    <div class="text-center">
+                        <button class="btn btn-success btn-md" type="button" name="button">Buy Now</button> <button class="btn btn-outline-secondary btn-md" type="button" name="button" disabled>Place a Bid</button>
+                    </div>
+
+                    <div class="card-footer">
+                        <p class="card-text"><small class="text-muted">Last updated {{trimDate this.updatedAt}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
     </div>
-    </div>
+
 </div>
-{{/each }}
+
+
 
 <!-- Custom JS -->
 <script src="js/listcars.js" type="text/javascript"></script>

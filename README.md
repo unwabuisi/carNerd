@@ -1,6 +1,6 @@
 # carNerd
 
-![card](/public/img/card.png)
+![card](/public/assets/img/card.png)
 
 
 Todo:

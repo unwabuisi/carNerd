@@ -16,7 +16,17 @@ body {
     margin-right: 5px;
 }
 
+.car-listing {
+    padding: 40px;
+}
 
+.car-info-title {
+    color:#B4A76C
+}
+
+button {
+    margin: 5px 2px 15px;
+}
 /*
 
 Color Theme:

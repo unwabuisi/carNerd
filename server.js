@@ -15,8 +15,28 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+// Set up Handelebars Helpers
+var hbs = exphbs.create({
+    // Specify helpers which are only registered on this instance.
+    helpers: {
+        trimDate: function (dateToTrim) {
+            var newDate = String(dateToTrim).substring(0,10);
+            return newDate;
+        },
+        capitalizeFirst: function(inputstr) {
+            return String(inputstr).substring(0,1).toUpperCase() + inputstr.substring(1);
+
+
+
+        }
+    },
+    defaultLayout:"main"
+});
+
+
 // set express to use handlebars for formatting
-app.engine("handlebars", exphbs({defaultLayout: "main"}));
+// app.engine("handlebars", exphbs({defaultLayout: "main"}));
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 // Routes ================================

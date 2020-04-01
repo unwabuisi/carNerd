@@ -11,6 +11,9 @@
         <!-- Boostrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="aonymous">
 
+        <!-- HandlebarsJS -->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
         <!-- Custom CSS -->
         <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
         <link rel="shortcut icon" href="assets/img/favicon.ico">
@@ -21,7 +24,7 @@
     <body>
         <div class="container">
             <!-- Navigation Bar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="sticky-top navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="/">
                   <img src="/assets/img/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
                   Car Nerd
@@ -45,8 +48,9 @@
                 </div>
               </div>
             </nav>
-        </div>
+
         {{{body}}}
+        </div>
     </body>
     <script type="text/javascript">
         function toggleDropdown (e) {

@@ -11,7 +11,17 @@ module.exports = function(app) {
     });
 
     app.get("/cars", function(req,res){
-        res.render("listcars");
+        var carlist = [];
+        db.Cars.findAll({}).then(function(result){
+            result.forEach(function(car,i){
+                carlist.push(car.dataValues);
+            });
+            var hbsObject = {
+                car: carlist
+            };
+            res.render("listcars", hbsObject);
+        });
+
     });
 
 

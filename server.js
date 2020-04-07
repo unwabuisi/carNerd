@@ -25,9 +25,6 @@ var hbs = exphbs.create({
         },
         capitalizeFirst: function(inputstr) {
             return String(inputstr).substring(0,1).toUpperCase() + inputstr.substring(1);
-
-
-
         }
     },
     defaultLayout:"main"

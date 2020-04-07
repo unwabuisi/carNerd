@@ -14,23 +14,14 @@
                 <input type="text" name="username" id="inputUsername" class="form-control col-6">
                 <label class="form-control-placeholder col-4" for="inputPassword">Password</label>
                 <input type="password" name="password"  id="inputPassword" class="form-control col-6">
+                <div id="errorMessages" class="col-12" style="color:red;"></div>
                 <button type="submit" class="btn btn-primary col-4">Submit</button>
             </div>
         </form>
     </div>
 
+
 </div>
 
-
-<script type="text/javascript">
-$('#signupform').submit(function(e) {
-    e.preventDefault();
-    // get all the inputs into an array.
-    var inputs = $('#signupform :input');
-    var values = {};
-    inputs.each(function() {
-        values[this.name] = $(this).val();
-    });
-    console.log(values);
-});
-</script>
+<!-- Custom JS -->
+<script src="js/signup.js"></script>

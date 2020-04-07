@@ -1,3 +1,6 @@
+var bcrypt = require("bcrypt-nodejs");
+
+
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
         username: {
@@ -11,6 +14,15 @@ module.exports = function(sequelize, DataTypes) {
         isAdmin: {
             type: DataTypes.BOOLEAN
         }
+    });
+    // adds a custom method on the User model to validate password by comparing the hashes
+    User.prototype.validPassword = function(password){
+        return bcrypt.compareSync(password, this.password);
+    };
+
+    // hashes password before the user is created
+    User.beforeCreate(function(user){
+        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(12), null);
     });
     return User;
 };

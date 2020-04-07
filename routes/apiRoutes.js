@@ -17,7 +17,6 @@ app.post("/api/v1/signup", function(req,res){
         username: req.body.username,
         password: req.body.password
     }).then(function(data){
-        console.log(data);
         res.status(200).end();
     }).catch(function(error){
         switch (error.errors[0].message) {

@@ -17,7 +17,14 @@ $('#signupform').submit(function(e) {
         url: "/api/v1/signup",
         data: values
     }).fail(function(result){
-        $("#errorMessages").html(result.responseText);
+        $("#statusMessage").css("color","red").html(result.responseText);
         console.log(result.responseText);
+    }).done(function(data){
+        $("#statusMessage").empty();
+        $("#statusMessage").css("color","green").text("You've signed up successfully. Please store your password in a safe place!");
+        setTimeout(function(){
+            location.assign("/login");
+        },3000);
+
     });
 });

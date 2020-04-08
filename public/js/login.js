@@ -1,9 +1,9 @@
 
 // after form submit, send POST request to server
-$('#signupform').submit(function(e) {
+$('#loginform').submit(function(e) {
     e.preventDefault();
     // get all the inputs into an array.
-    var inputs = $('#signupform :input');
+    var inputs = $('#loginform :input');
     var values = {};
     inputs.each(function() {
         if ($(this).val() !== "") {
@@ -11,16 +11,18 @@ $('#signupform').submit(function(e) {
         }
     });
 
+
+
     $.ajax({
         type: "POST",
-        url: "/api/v1/signup",
+        url: "/api/v1/login",
         data: values
     }).fail(function(result){
         $("#statusMessage").css("color","red").html(result.responseText);
         console.log(result.responseText);
     }).done(function(data){
         $("#statusMessage").empty();
-        $("#statusMessage").css("color","green").text("You've signed up successfully. Please store your password in a safe place!");
+        $("#statusMessage").css("color","green").text("You've signed in successfully!");
         setTimeout(function(){
             location.assign("/cars");
         },2500);

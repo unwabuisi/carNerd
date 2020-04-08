@@ -27,6 +27,10 @@ body {
 button {
     margin: 5px 2px 15px;
 }
+
+.page-footer{
+    background-color: #00D1C1;
+}
 /*
 
 Color Theme:

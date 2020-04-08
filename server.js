@@ -3,10 +3,24 @@ var db = require("./models");
 var express = require("express");
 var path = require("path");
 var exphbs = require("express-handlebars");
+// Passport JS authentication
+var passport = require("./config/passport.js");
+var session = require("express-session");
 
 // set up Express App ================================
 var port = process.env.PORT || 8080;
 var app = express();
+
+// don't use "keyboard cat" in production
+app.use(session({secret: "keyboard dog", resave: true, saveUninitialize: true}));
+
+// gets everything set up
+app.use(passport.initialize());
+
+// use session that was just created
+app.use(passport.session());
+
+
 
 // static directory
 app.use(express.static(__dirname + '/public'));

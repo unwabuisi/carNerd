@@ -1,5 +1,5 @@
 var db = require("../models");
-
+var passport = require("../config/passport.js");
 
 // Routes
 // ===================================
@@ -17,7 +17,8 @@ app.post("/api/v1/signup", function(req,res){
         username: req.body.username,
         password: req.body.password
     }).then(function(data){
-        res.status(200).end();
+        res.redirect(307, '/api/v1/login');
+        // res.status(200).end();
     }).catch(function(error){
         switch (error.errors[0].message) {
             case "User.username cannot be null":
@@ -31,5 +32,15 @@ app.post("/api/v1/signup", function(req,res){
         }
     });
 });
+
+
+// authenticates user when submitted
+app.post("/api/v1/login", passport.authenticate("local"), function(req,res) {
+    // var user = req.user.username;
+    res.redirect(200,"/cars");
+});
+
+
+
 
 };

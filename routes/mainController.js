@@ -7,12 +7,23 @@ var passport = require("../config/passport.js");
 module.exports = function(app) {
 
     app.get("/", function(req,res) {
+        if (!req.user) {
+            res.render("index");
+        }
+        else {
+            hbsObject = {
+                username: req.user.username,
+                loggedin:true
+            };
+            res.render("index",hbsObject);
+        }
 
-        res.render("index");
     });
 
-    app.get("/cars", passport.authenticate("local", {failureRedirect:'/login'}), function(req,res){
-
+    app.get("/cars", function(req,res){
+        if (!req.user) {
+            return res.redirect("/login");
+        }
         var carlist = [];
         db.Cars.findAll({}).then(function(result){
             result.forEach(function(car,i){
@@ -20,7 +31,8 @@ module.exports = function(app) {
             });
             var hbsObject = {
                 car: carlist,
-                loggedin: true
+                loggedin:true,
+                username: req.user.username
             };
             res.render("listcars", hbsObject);
         });
@@ -35,5 +47,9 @@ module.exports = function(app) {
         res.render("login");
     });
 
+    app.get("/logout", function(req,res){
+        req.logout();
+        res.redirect("/");
+    });
 
 };

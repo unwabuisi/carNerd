@@ -37,7 +37,7 @@ app.post("/api/v1/signup", function(req,res){
 // authenticates user when submitted
 app.post("/api/v1/login", passport.authenticate("local"), function(req,res) {
     // var user = req.user.username;
-    res.redirect(200,"/cars");
+    res.status(200).end();
 });
 
 

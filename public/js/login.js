@@ -25,7 +25,7 @@ $('#loginform').submit(function(e) {
         $("#statusMessage").css("color","green").text("You've signed in successfully!");
         setTimeout(function(){
             location.assign("/cars");
-        },2500);
+        },1500);
 
     });
 });

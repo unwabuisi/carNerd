@@ -35,16 +35,22 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <div class="navbar-nav">
                   <a class="nav-item nav-link" href="/cars">Cars For Sale</a>
+
+                  {{#if loggedin}}
+                    <a class="nav-item nav-link" href="/logout">Log Out</a>
+                  {{/if}}
+                  {{#unless loggedin}}
                   <a class="nav-item nav-link" href="/signup">Sign Up</a>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/login" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Login
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="/login">Buyer Log-In</a>
-                      <a class="dropdown-item" href="/login?admin=y">Admin Log-In</a>
-                    </div>
-                  </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/login" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Login
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="/login">Buyer Log-In</a>
+                          <a class="dropdown-item" href="/login?admin=y">Admin Log-In</a>
+                        </div>
+                      </li>
+                    {{/unless}}
                 </div>
               </div>
             </nav>
@@ -55,8 +61,8 @@
                 <footer class="page-footer font-small blue fixed-bottom">
 
                   <!-- Copyright -->
-                  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+                  <div class="footer-copyright text-center py-3">
+                      Welcome {{capitalizeFirst this.username}}!
                   </div>
                   <!-- Copyright -->
 

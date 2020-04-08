@@ -12,7 +12,7 @@ var port = process.env.PORT || 8080;
 var app = express();
 
 // don't use "keyboard cat" in production
-app.use(session({secret: "keyboard dog", resave: true, saveUninitialize: true}));
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 
 // gets everything set up
 app.use(passport.initialize());

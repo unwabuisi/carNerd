@@ -23,7 +23,7 @@ $('#signupform').submit(function(e) {
         $("#statusMessage").css("color","green").text("You've signed up successfully. Please store your password in a safe place!");
         setTimeout(function(){
             location.assign("/cars");
-        },2500);
+        },1500);
 
     });
 });

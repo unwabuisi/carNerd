@@ -1,7 +1,7 @@
 var passport = require("passport");
 
 // to set a specific way to use passport to authenticate users
-var LocalStrategy = require("passport-local");
+var LocalStrategy = require("passport-local").Strategy;
 
 var db = require("../models");
 

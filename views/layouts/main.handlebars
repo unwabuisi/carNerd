@@ -37,6 +37,7 @@
                   <a class="nav-item nav-link" href="/cars">Cars For Sale</a>
 
                   {{#if loggedin}}
+                    <a class="nav-item nav-link" href="/user/{{this.username}}">Profile</a>
                     <a class="nav-item nav-link" href="/logout">Log Out</a>
                   {{/if}}
                   {{#unless loggedin}}

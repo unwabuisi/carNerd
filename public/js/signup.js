@@ -1,5 +1,5 @@
 
-// after form submit, send POST request to server
+// after form submit, send POST request to server with signup info
 $('#signupform').submit(function(e) {
     e.preventDefault();
     // get all the inputs into an array.

@@ -1,5 +1,5 @@
 
-// after form submit, send POST request to server
+// after form submit, send POST request to server with login info
 $('#loginform').submit(function(e) {
     e.preventDefault();
     // get all the inputs into an array.
@@ -10,8 +10,6 @@ $('#loginform').submit(function(e) {
             values[this.name] = $(this).val();
         }
     });
-
-
 
     $.ajax({
         type: "POST",

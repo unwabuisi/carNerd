@@ -3,7 +3,6 @@
 <div class="card-deck">
 
     <div class="row row-cols-1 row-cols-md-3 car-listing">
-
         {{#each car}}
         <div class="col mb-4">
             <div class="card">
@@ -24,7 +23,7 @@
                         <b>Price:</b> ${{this.price}}
                     </p>
                     <div class="text-center">
-                        <button class="btn btn-success btn-md" type="button" name="button">Buy Now</button> <button class="btn btn-outline-secondary btn-md" type="button" name="button" disabled>Place a Bid</button>
+                        <button class="btn btn-success btn-md buynow-btn" type="button" name="button" data-carid={{this.id}}>Buy Now</button> <button class="btn btn-outline-secondary btn-md" type="button" name="button">Add To Wishlist</button>
                     </div>
 
                     <div class="card-footer">

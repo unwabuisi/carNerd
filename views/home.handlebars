@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="burger-display col-sm">
+        <h3 class="text-center">Car Wishlist</h3>
+        <table class="table table-striped">
+            <tbody>
+                {{#each burgers}}
+                    {{#unless this.devoured}}
+                        <tr>
+                            <th scope="row">
+                                {{this.burger_name}} <button type="button" class="btn btn-light devour-btn" data-burgerid={{this.id}} data-burgername="{{{this.burger_name}}}" name="button">Devoured</button>
+                            </th>
+                        </tr>
+                    {{/unless}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="burger-display col-sm">
+        <h3 class="text-center">Purchased Cars</h3>
+        <table class="table table-striped">
+            <tbody>
+                {{#each burgers}}
+                    {{#if this.devoured}}
+                        <tr>
+                            <th scope="row">{{this.burger_name}}</th>
+                        </tr>
+                    {{/if}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- <div class="row"> -->
+    <!-- <div class="form-group col-lg text-center"> -->
+        <!-- <form class="burgerAdd" action="" method=""> -->
+            <!-- <label for="burgerName">Enter a burger you want to try and click "Submit"</label><br> -->
+            <!-- <input type="text" name="burgerName" value=""><br> -->
+            <!-- <button type="submit" class="btn btn-lg btn-primary" name="button">Submit</button> -->
+        <!-- </form> -->
+    <!-- </div> -->
+<!-- </div> -->

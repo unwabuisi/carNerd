@@ -41,7 +41,19 @@ module.exports = function(sequelize, DataTypes) {
         },
         date_purchased: {
             type:DataTypes.DATE
-        }
+        },
+		buyer_id :{
+			type:DataTypes.INTEGER
+		}
+	},{
+		classMethods: {
+			associate: function(models){
+				Car.belongsTo(models.User, {foreignKey: "buyer_id", targeyKey:"id"});
+			}
+		}
 	});
+
+
+
 	return Car;
 };

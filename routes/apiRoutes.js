@@ -6,7 +6,13 @@ var passport = require("../config/passport.js");
 module.exports = function(app) {
 
     app.get("/api/v1/cars", function(req,res){
-        db.Cars.findAll({include:[db.User]}).then(function(allcars){
+        //this function will get a JSON list of all cars, and their associated records of who purchased the car
+        db.Cars.findAll({include:
+            {
+                model: db.User,
+                attributes: ['username', 'isAdmin']
+            }
+        }).then(function(allcars){
             // console.log(allcars);
             res.json(allcars).status(200);
         });

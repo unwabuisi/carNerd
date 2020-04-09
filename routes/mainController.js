@@ -38,22 +38,10 @@ module.exports = function(app) {
     app.get("/cars", function(req,res){
         //if user is not logged in, redirect them to login page
         if (!req.user) {
-            var carlist = [];
-            db.Cars.findAll({}).then(function(result){
-                result.forEach(function(car,i){
-                    carlist.push(car.dataValues);
-                });
-                var hbsObject = {
-                    car: carlist,
-                    loggedin:true,
-                    username: "test"
-                };
-                res.render("listcars", hbsObject);
-            });
-
-            // return res.redirect("/login");
+            return res.redirect("/login");
         }
         var carlist = [];
+        
         db.Cars.findAll({}).then(function(result){
             result.forEach(function(car,i){
                 carlist.push(car.dataValues);

@@ -45,15 +45,19 @@ module.exports = function(sequelize, DataTypes) {
 		buyer_id :{
 			type:DataTypes.INTEGER
 		}
-	},{
-		classMethods: {
-			associate: function(models){
-				Car.belongsTo(models.User, {foreignKey: "buyer_id", targeyKey:"id"});
-			}
-		}
-	});
+	}
+	// ,{
+	// 	classMethods: {
+	// 		associate: function(models){
+	// 			Car.belongsTo(models.User, {foreignKey: "buyer_id", targeyKey:"id"});
+	// 		}
+	// 	}
+	// }
+);
 
-
+	Car.associate = function(models) {
+		Car.belongsTo(models.User,{foreignKey:"buyer_id",targetKey:"buyer_id"});
+	};
 
 	return Car;
 };

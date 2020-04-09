@@ -13,13 +13,15 @@ module.exports = function(sequelize, DataTypes) {
         isAdmin: {
             type: DataTypes.BOOLEAN
         }
-    },{
-        classMethods: {
-            associate: function(models) {
-                User.hasMany(models.Car, {foreignKey:"buyer_id", sourceKey:"id"});
-            }
-        }
-    });
+    }
+    // ,{
+    //     classMethods: {
+    //         associate: function(models) {
+    //             User.hasMany(models.Car, {foreignKey:"buyer_id", sourceKey:"id"});
+    //         }
+    //     }
+    // }
+);
     // adds a custom method on the User model to validate password by comparing the hashes
     User.prototype.validPassword = function(password){
         return bcrypt.compareSync(password, this.password);
@@ -30,6 +32,8 @@ module.exports = function(sequelize, DataTypes) {
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(12), null);
     });
 
-
+    User.associate = function(models){
+        models.User.hasMany(models.Car, {as:"Cars",foreignKey:"buyer_id", sourceKey:"buyer_id"});
+    };
     return User;
 };

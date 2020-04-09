@@ -43,7 +43,11 @@ module.exports = function(sequelize, DataTypes) {
             type:DataTypes.DATE
         },
 		buyer_id :{
-			type:DataTypes.INTEGER
+			type:DataTypes.INTEGER,
+			references: {
+				model: 'Users',
+				key: 'id'
+			}
 		}
 	}
 	// ,{
@@ -56,7 +60,7 @@ module.exports = function(sequelize, DataTypes) {
 );
 
 	Car.associate = function(models) {
-		Car.belongsTo(models.User,{foreignKey:"buyer_id",targetKey:"buyer_id"});
+		Car.belongsTo(models.User,{foreignKey:"buyer_id",targetKey:"id"});
 	};
 
 	return Car;

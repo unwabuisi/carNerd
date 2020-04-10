@@ -31,6 +31,14 @@ button {
 .page-footer{
     background-color: #00D1C1;
 }
+
+
+.purchase-car-display {
+    margin: 30px;
+    height:650px;
+    overflow-y: scroll;
+
+}
 /*
 
 Color Theme:

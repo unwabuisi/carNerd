@@ -46,6 +46,7 @@ module.exports = function(app) {
         res.status(200).end();
     });
 
+    // car purchase api route
     app.put("/api/v1/purchase/:carid", function(req,res){
         db.Cars.update({
             //fills in the buyer id field on the cars db with the user who is buying this car's ID
@@ -57,10 +58,11 @@ module.exports = function(app) {
                 id: req.body.car_id
             }
         }).then(function(result){
-            console.log(result);
+            res.status(200).end();
+        }).catch(function(error){
+            console.log(error);
         });
-        console.log(req.body);
-        console.log(req.user.id);
+
     });
 
 

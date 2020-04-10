@@ -21,15 +21,39 @@ module.exports = function(app) {
 
     app.get("/", function(req,res) {
 
+        //user is not logged in
         if (!req.user) {
             res.render("index");
         }
+
+        //user is logged in
         else {
-            hbsObject = {
-                username: req.user.username,
-                loggedin:true
-            };
-            res.render("home",hbsObject);
+            var carlist = [];
+
+            db.Cars.findAll({
+                where: {
+                    buyer_id: req.user.id
+                }
+            }).then(function(result){
+
+                result.forEach(function(car,i){
+                    carlist.push(car.dataValues);
+                });
+
+                hbsObject = {
+                    car: carlist,
+                    username: req.user.username,
+                    loggedin:true
+                };
+
+                res.render("home",hbsObject);
+
+            }).catch(function(error){
+                console.log(error);
+            });
+
+
+
         }
 
     });
@@ -58,13 +82,13 @@ module.exports = function(app) {
                 loggedin:true,
                 username: req.user.username
             };
-
             res.render("listcars", hbsObject);
         });
 
     });
 
     app.get("/user/:username",function(req,res){
+
 
         res.render("profile",
         {

@@ -1,9 +1,32 @@
 <div class="row">
+
+    <div class="col-sm">
+        <h3 class="text-center">Purchased Cars</h3>
+        <div class="purchase-car-display">
+            {{#each car}}
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="https://img2.cgtrader.com/items/1908571/bc607730de/peugeot-504-taxi-3d-model-max.jpg" class="card-img" alt="{{this.make}} {{this.body_style}}">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                            <h5 class="card-title">{{this.make}} - {{this.body_style}}</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated {{trimDate this.updatedAt}}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
     <div class="burger-display col-sm">
         <h3 class="text-center">Car Wishlist</h3>
         <table class="table table-striped">
             <tbody>
-                {{#each burgers}}
+                <!-- {{#each burgers}}
                     {{#unless this.devoured}}
                         <tr>
                             <th scope="row">
@@ -11,25 +34,11 @@
                             </th>
                         </tr>
                     {{/unless}}
-                {{/each}}
+                {{/each}} -->
             </tbody>
         </table>
     </div>
 
-    <div class="burger-display col-sm">
-        <h3 class="text-center">Purchased Cars</h3>
-        <table class="table table-striped">
-            <tbody>
-                {{#each burgers}}
-                    {{#if this.devoured}}
-                        <tr>
-                            <th scope="row">{{this.burger_name}}</th>
-                        </tr>
-                    {{/if}}
-                {{/each}}
-            </tbody>
-        </table>
-    </div>
 </div>
 
 

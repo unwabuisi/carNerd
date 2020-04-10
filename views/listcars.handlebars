@@ -7,7 +7,7 @@
         <div class="col mb-4">
             <div class="card">
                 <!-- <img src="https://via.placeholder.com/150" class="card-img-top" alt="..."> -->
-                <img src="https://img2.cgtrader.com/items/1908571/bc607730de/peugeot-504-taxi-3d-model-max.jpg" class="card-img-top" alt="...">
+                <img src="https://img2.cgtrader.com/items/1908571/bc607730de/peugeot-504-taxi-3d-model-max.jpg" class="card-img-top" alt="{{this.make}} {{this.body_style}}">
                 <div class="card-body">
                     <h5 class="card-title">{{this.make}} - {{this.body_style}}</h5>
                     <p class="card-text">
@@ -27,7 +27,8 @@
                         {{#if (carHasBeenSold this.date_purchased)}}
                             <h2 style="color:red;">SOLD</h2>
                         {{else}}
-                            <button class="btn btn-success btn-md buynow-btn" type="button" name="button" data-carid={{this.id}}>Buy Now</button> <button class="btn btn-outline-secondary btn-md" type="button" name="button">Add To Wishlist</button>
+                            <button class="btn btn-success btn-md buynow-btn" type="button" name="button" data-carid={{this.id}}>Buy Now</button>
+                            <!-- <button class="btn btn-outline-secondary btn-md" type="button" name="button">Add To Wishlist</button> -->
                         {{/if}}
                     </div>
 

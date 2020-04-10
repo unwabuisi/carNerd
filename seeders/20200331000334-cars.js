@@ -21,8 +21,9 @@ module.exports = {
               city_mpg: car.city_mpg,
               highway_mpg: car.highway_mpg,
               price: car.price,
+              img: car.img,
               createdAt: new Date(),
-              updatedAt: new Date() 
+              updatedAt: new Date()
           });
       });
 

@@ -6,6 +6,8 @@ $(".buynow-btn").on("click", function(){
         car_id: carID,
         date: new Date()
     };
+    $(this).prop('disabled', true);
+
     console.log(data);
     $.ajax({
         url: '/api/v1/purchase/' + carID,
@@ -14,7 +16,7 @@ $(".buynow-btn").on("click", function(){
     }).fail(function(error){
         console.log(error);
     }).done(function(result){
-        location.assign("/");
+        $("#statuscenter" + carID).css("color","green").html(`Purchased!<br>See your list of cars <a href="/">here</a>`);
     });
 });
 

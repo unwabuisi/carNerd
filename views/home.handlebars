@@ -7,13 +7,13 @@
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="https://img2.cgtrader.com/items/1908571/bc607730de/peugeot-504-taxi-3d-model-max.jpg" class="card-img" alt="{{this.make}} {{this.body_style}}">
+                            <img src="{{this.img}}" class="card-img" alt="{{this.make}} {{this.body_style}}">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                             <h5 class="card-title">{{this.make}} - {{this.body_style}}</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated {{trimDate this.updatedAt}}</small></p>
+                            <p class="card-text">Price: ${{this.price}}</p>
+                            <p class="card-text"><small class="text-muted">Purchased on {{trimDate this.date_purchased}}</small></p>
                             </div>
                         </div>
                     </div>

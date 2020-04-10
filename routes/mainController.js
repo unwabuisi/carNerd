@@ -72,11 +72,12 @@ module.exports = function(app) {
                     model: db.User,
                     attributes: ['username', 'isAdmin']
                 },
-            order: ['id']
+            order: db.sequelize.random()
         }).then(function(result){
             result.forEach(function(car,i){
                 carlist.push(car.dataValues);
             });
+            // console.log(carlist);
             var hbsObject = {
                 car: carlist,
                 loggedin:true,

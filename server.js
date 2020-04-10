@@ -39,6 +39,12 @@ var hbs = exphbs.create({
         },
         capitalizeFirst: function(inputstr) {
             return String(inputstr).substring(0,1).toUpperCase() + inputstr.substring(1);
+        },
+        carHasBeenSold: function(datePurchased) {
+            if (datePurchased != null) {
+                // car has been sold because the date purchased field is filled in
+                return true;
+            }
         }
     },
     defaultLayout:"main"

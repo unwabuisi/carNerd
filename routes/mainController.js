@@ -41,8 +41,15 @@ module.exports = function(app) {
             return res.redirect("/login");
         }
         var carlist = [];
-        
-        db.Cars.findAll({}).then(function(result){
+
+        db.Cars.findAll({
+            include:
+                {
+                    model: db.User,
+                    attributes: ['username', 'isAdmin']
+                },
+            order: ['id']
+        }).then(function(result){
             result.forEach(function(car,i){
                 carlist.push(car.dataValues);
             });
@@ -51,6 +58,7 @@ module.exports = function(app) {
                 loggedin:true,
                 username: req.user.username
             };
+
             res.render("listcars", hbsObject);
         });
 

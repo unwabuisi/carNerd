@@ -22,13 +22,22 @@
                         <hr>
                         <b>Price:</b> ${{this.price}}
                     </p>
-                    
+
                     <div class="text-center purchase-btns">
-                        <button class="btn btn-success btn-md buynow-btn" type="button" name="button" data-carid={{this.id}}>Buy Now</button> <button class="btn btn-outline-secondary btn-md" type="button" name="button">Add To Wishlist</button>
+                        {{#if (carHasBeenSold this.date_purchased)}}
+                            <h2 style="color:red;">SOLD</h2>
+                        {{else}}
+                            <button class="btn btn-success btn-md buynow-btn" type="button" name="button" data-carid={{this.id}}>Buy Now</button> <button class="btn btn-outline-secondary btn-md" type="button" name="button">Add To Wishlist</button>
+                        {{/if}}
                     </div>
 
+
                     <div class="card-footer">
-                        <p class="card-text"><small class="text-muted">Last updated {{trimDate this.updatedAt}}</small></p>
+                        {{#if (carHasBeenSold this.date_purchased)}}
+                            <p class="card-text"><small class="text-muted">Purchased by {{this.User.dataValues.username}} on {{trimDate this.date_purchased}}</small></p>
+                        {{else}}
+                            <p class="card-text"><small class="text-muted">Last updated {{trimDate this.updatedAt}}</small></p>
+                        {{/if}}
                     </div>
                 </div>
             </div>

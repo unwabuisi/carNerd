@@ -2,7 +2,7 @@
 
 ![card](/public/assets/img/card.png)
 
-Car Nerd is my version of a mock car buying marketplace. I wanted to challenge myself to see if I could put together a web application in two weeks that was analagous to a marketplace online. I was also extremely bored during my COVID-19 quarantine.
+Car Nerd is my mock version of a car buying marketplace. I wanted to challenge myself to see if I could put together a web application in two weeks that was analagous to a marketplace online. I was also extremely bored during my COVID-19 quarantine.
 
 I used a [real dataset I found online](https://www.kaggle.com/jingbinxu/sample-of-car-data), it had a list of cars and relevant info a car buyer or auctioneer might need.
 
@@ -15,3 +15,9 @@ This web application uses the following technologies:
 
 
 You can view a live version [here](https://floating-ridge-71764.herokuapp.com/)
+
+On the app, you can:
+- view all the cars for sale
+- view each individual car and all of its info (MPG, RPM, Weight, etc.)
+- Purchase a car
+- See a list of cars you've purchased (on the homepage)

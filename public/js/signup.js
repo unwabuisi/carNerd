@@ -17,7 +17,7 @@ $('#signupform').submit(function(e) {
         data: values
     }).fail(function(result){
         $("#statusMessage").css("color","red").html(result.responseText);
-        console.log(result.responseText);
+        console.log("ERORR: "+result.responseText);
     }).done(function(data){
         $("#statusMessage").empty();
         $("#statusMessage").css("color","green").text("You've signed up successfully. Please store your password in a safe place!");

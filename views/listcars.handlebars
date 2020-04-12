@@ -28,7 +28,9 @@
                             <h2 style="color:red;">SOLD</h2>
                         {{else}}
                             <button class="btn btn-success btn-md buynow-btn" type="button" name="button" data-carid={{this.id}}>Buy Now</button>
-                            <!-- <button class="btn btn-outline-secondary btn-md" type="button" name="button">Add To Wishlist</button> -->
+                            <a href="/cars/{{this.id}}">
+                                <button class="btn btn-outline-secondary btn-md" type="button" name="button">More Info</button>
+                            </a>
                         {{/if}}
                     </div>
 

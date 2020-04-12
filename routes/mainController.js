@@ -97,4 +97,27 @@ module.exports = function(app) {
             loggedin:true
         });
     });
+
+    app.get("/cars/:carid", function(req,res){
+        db.Cars.findOne({
+            include:
+                {
+                    model: db.User,
+                    attributes: ['username', 'isAdmin']
+                },
+            where: {
+                id: req.params.carid
+            }
+        }).then(function(car){
+            var hbsObject = {
+                car: car.dataValues,
+                loggedin:true,
+                username: req.user.username
+            };
+            res.render("car",hbsObject);
+        }).catch(function(error){
+            console.log(error);
+        });
+    });
+    
 };

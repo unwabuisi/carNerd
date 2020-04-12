@@ -26,12 +26,17 @@ module.exports = function(app) {
             res.redirect(307, '/api/v1/login');
             // res.status(200).end();
         }).catch(function(error){
+
             switch (error.errors[0].message) {
+
                 case "User.username cannot be null":
                     res.status(500).send("Username cannot be empty. Please enter a username.");
                     break;
                 case "User.password cannot be null":
                     res.status(500).send("Password cannot be empty. Please enter a password.");
+                    break;
+                case "username must be unique":
+                    res.status(500).send("Sorry, that username is taken!");
                     break;
                 default:
                     console.log(error.errors[0]);

@@ -1,5 +1,4 @@
 <div class="row">
-
     <div class="col-sm">
         <h3 class="text-center">Purchased Cars</h3>
         <div class="purchase-car-display">
@@ -17,15 +16,20 @@
                             </div>
                         </div>
                     </div>
+                    <div class="text-center purchase-btns">
+                        <a href="/cars/{{this.id}}">
+                            <button class="btn btn-outline-secondary btn-md" type="button" name="button">More Info</button>
+                        </a>
+                    </div>
                 </div>
             {{/each}}
         </div>
     </div>
 
-    <div class="burger-display col-sm">
-        <h3 class="text-center">Car Wishlist</h3>
-        <table class="table table-striped">
-            <tbody>
+    <!-- <div class="burger-display col-sm"> -->
+        <!-- <h3 class="text-center">Car Wishlist</h3> -->
+        <!-- <table class="table table-striped"> -->
+            <!-- <tbody> -->
                 <!-- {{#each burgers}}
                     {{#unless this.devoured}}
                         <tr>
@@ -35,9 +39,9 @@
                         </tr>
                     {{/unless}}
                 {{/each}} -->
-            </tbody>
-        </table>
-    </div>
+            <!-- </tbody> -->
+        <!-- </table> -->
+    <!-- </div> -->
 
 </div>
 

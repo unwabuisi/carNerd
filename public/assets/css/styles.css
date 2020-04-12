@@ -39,6 +39,16 @@ button {
     overflow-y: scroll;
 
 }
+
+@media only screen and (min-width: 400px)  {
+    .car-page-img {
+        max-width: 30%;
+        max-height: 30%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 /*
 
 Color Theme:

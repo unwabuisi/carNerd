@@ -12,10 +12,16 @@ This web application uses the following technologies:
 - MySQL Database (JawsDB with Heroku)
 - Sequelize ORM / Sequelize CLI (for db migrations)
 - NodeJS and Express Web Server
+- Bcrypt (for hashing and salting user passwords during signup)
+- PassportJS (for authenticating users who log in)
 
 
 You can view a live version [here](https://floating-ridge-71764.herokuapp.com/)
+If you don't want to create an account, you can use the following credentials:
+Username: test
+Password: user
 
+![demo](/public/assets/img/demo.gif)
 On the app, you can:
 - view all the cars for sale
 - view each individual car and all of its info (MPG, RPM, Weight, etc.)

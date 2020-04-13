@@ -22,6 +22,7 @@ Username: test
 Password: user
 
 ![demo](/public/assets/img/demo.gif)
+
 On the app, you can:
 - view all the cars for sale
 - view each individual car and all of its info (MPG, RPM, Weight, etc.)

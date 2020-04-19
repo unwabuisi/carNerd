@@ -14,6 +14,8 @@ This web application uses the following technologies:
 - NodeJS and Express Web Server
 - [BCrypt](https://www.npmjs.com/package/bcrypt-nodejs) (for hashing and salting user passwords during signup)
 - [PassportJS](http://www.passportjs.org/) (for authenticating users who log in)
+I also designed and implemented all the API endpoints for login and tracking car purchases.
+
 
 
 You can view a live version [here](https://floating-ridge-71764.herokuapp.com/)
